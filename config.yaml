@@ -1,0 +1,102 @@
+config:
+  ip: "{your ip}"
+  user: "{your ssh user}"
+  password: "{your password}"
+  root_pass: "{your password}"
+  input:
+    - 'ssh {user}@{ip}'
+    - '{password}'
+    - 'su - root'
+    - '{root_pass}'
+    - 'su - bes'
+  steps:
+    - step:
+          function: find_img_x_y
+          params: 'zd.png'
+
+          is_do: True
+    - step:
+        function: wait_input
+        is_do: True
+    - step:
+        function: click
+        params: 'right'
+        is_do: True
+    - step:
+        function: sleep
+        params: 1
+        is_do: True
+    - step:
+        function: find_img_x_y_click
+        params: 'new.png'
+
+        is_do: True
+    - step:
+        function: open_terminal
+        is_do: False
+    - step:
+        function: sleep
+        params: 3
+        is_do: False
+    - step:
+        function: input_command
+        params: '{input}'
+        is_do: True
+    - step:
+        function: find_img_x_y
+        params: 'chrome.png'
+        is_do: True
+    - step:
+        function: click
+        params: 'right'
+        is_do: True
+    - step:
+        function: sleep
+        params: 1
+        is_do: True
+    - step:
+        function: find_img_x_y_click
+        params: 'new-chrome.png'
+        is_do: True
+    - step:
+        function: sleep
+        params: 2
+        is_do: True
+    - step:
+        function: find_img_x_y_click
+        params: 'kxqdev.png'
+        is_do: True
+    - step:
+        function: sleep
+        params: 1
+        is_do: True
+    - step:
+        function: find_img_x_y_click
+        params: 'webserver.png'
+        is_do: True
+    - step:
+        function: sleep
+        params: 2
+        is_do: True
+    - step:
+        function: find_img_x_y_click
+        params: 'ws-username.png'
+        is_do: True
+    - step:
+        function: switch_en
+        is_do: True
+    - step:
+        function: type_text
+        params: 'admin'
+        is_do: True
+    - step:
+        function: find_img_x_y_click
+        params: 'ws-password.png'
+        is_do: True
+    - step:
+        function: type_text
+        params: 'B#2008_2108#es'
+        is_do: True
+    - step:
+        function: wait_input
+        is_do: True
